@@ -1,5 +1,9 @@
+<!--
+    Aura Componente - Uma pagina feita para consultar CEP 
+    Essa pagina preenche automaticamente o endereço da Conta
+-->
+
 <aura:component controller="GFT_CTR_BuscaCep" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId">
-    <!-- variavel declarada -->   
     <aura:attribute name="varCep" type="String"/>   
     <aura:attribute name="varLogradouro" type="String"/>   
     <aura:attribute name="varComplemento" type="String"/>   
@@ -15,8 +19,7 @@
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
 
     <lightning:layout>
-        <lightning:layoutItem padding="horizontal-medium">
-            <!-- aura id and name MUST be different-->         
+        <lightning:layoutItem padding="horizontal-medium">                   
             <lightning:input name="cep" label="CEP" class="cep" aura:id="inputCep" disabled="{!v.inputCepControl}" value="{!v.varCep}" placeholder="Enter Postal Code" maxlength="9"/>
         </lightning:layoutItem>        
     </lightning:layout>    

@@ -1,5 +1,13 @@
+/**
+        Classe GFT_Cep - Essa classe realiza o insert dos endereços no account de acordo com o CEP. Por exemplo, recebe um CEP atraves 
+        do metodo buscaCep, estabelece uma comunicação com a API ViaCep (disponível em https://viacep.com.br/), atualiza o endereço da conta
+        e entao retorna para o front-end.
+
+        autor: samuel.msbr@gmail.com
+        versão: 1.0
+ */
+
 public with sharing class GFT_Cep {
-    
     @AuraEnabled
     public static Object buscaCep(String newCep, String newAccountId) { 
         HttpResponse data = null;      

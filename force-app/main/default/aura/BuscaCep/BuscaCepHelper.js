@@ -1,12 +1,8 @@
 ({
     buscarCepIntegracao : function(component, event, helper) {         
-        var cep = component.find("inputCep").get("v.value");     
-        
-        
-        
+        var cep = component.find("inputCep").get("v.value");    
         var varAccountId =  component.get("v.recordId");  
         var action = component.get("c.buscaCep");
-
         action.setParams({
             newCep: cep,
             newAccountId : varAccountId
