@@ -76,6 +76,13 @@
         component.set("v.varGia", returnJson['gia']);     
     },  
 
+    /**
+     * 
+     * @param {*} component 
+     * @param {*} event 
+     * @param {*} helper 
+     * @param {boolean status resultante da busca da Api viaCep} result 
+     */
     showToast : function(component, event, helper, result) {
         var isSucess = result;
         var customMessage;

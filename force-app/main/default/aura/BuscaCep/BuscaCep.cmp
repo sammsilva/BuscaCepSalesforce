@@ -13,11 +13,9 @@
     <aura:attribute name="varIbge" type="String"/>   
     <aura:attribute name="varGia" type="String"/>     
     <aura:attribute name="recordId" type="String" />
-    <aura:attribute name="editControl" type="boolean" />
     <aura:attribute name="inputCepControl" type="boolean"/>
     <aura:attribute name="resultsControl" type="boolean" />   
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
-
     <lightning:layout>
         <lightning:layoutItem padding="horizontal-medium">                   
             <lightning:input name="cep" label="CEP" class="cep" aura:id="inputCep" disabled="{!v.inputCepControl}" value="{!v.varCep}" placeholder="Enter Postal Code" maxlength="9"/>
