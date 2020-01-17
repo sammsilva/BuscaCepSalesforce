@@ -1,0 +1,57 @@
+<aura:component controller="GFT_CTR_BuscaCep" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId">
+    <!-- variavel declarada -->
+    <ltng:require scripts="{!$Resource.jQuery}" afterScriptsLoaded="{! c.doInit}"/>
+    <aura:attribute name="varCep" type="String"/>   
+    <aura:attribute name="varLogradouro" type="String"/>   
+    <aura:attribute name="varComplemento" type="String"/>   
+    <aura:attribute name="varBairro" type="String"/>   
+    <aura:attribute name="varCidade" type="String"/>   
+    <aura:attribute name="varUf" type="String"/>   
+    <aura:attribute name="varIbge" type="String"/>   
+    <aura:attribute name="varGia" type="String"/>     
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="editControl" type="boolean" />
+    <aura:attribute name="inputCepControl" type="boolean"/>
+    <aura:attribute name="resultsControl" type="boolean" />   
+    <lightning:layout>
+        <lightning:layoutItem padding="horizontal-medium">
+            <!-- aura id and name MUST be different-->          
+            <lightning:input name="cep" label="CEP" aura:id="inputCep" disabled="{!v.inputCepControl}" value="{!v.varCep}" placeholder="Enter Postal Code" pattern="[0-9]{5}-[0-9]{3}"/>
+        </lightning:layoutItem>
+    </lightning:layout>    
+    <lightning:layout>      
+       <lightning:layoutItem flexibility="auto" padding="around-small">
+            <lightning:input name="logradouro" label="Logradouro: " aura:id="inputLogradouro" disabled="{!v.resultsControl}" value="{!v.varLogradouro}"/>               
+        </lightning:layoutItem> 
+       <lightning:layoutItem flexibility="auto" padding="around-small">
+            <lightning:input name="complemento" label="Complemento: " aura:id="inputComplemento" disabled="{!v.resultsControl}" value="{!v.varComplemento}"/>
+        </lightning:layoutItem>
+    </lightning:layout>  
+    <lightning:layout>  
+       <lightning:layoutItem flexibility="auto" padding="around-small">
+            <lightning:input name="bairro" label="Bairro: " aura:id="inputBairro" disabled="{!v.resultsControl}" value="{!v.varBairro}"/>           
+        </lightning:layoutItem>
+       <lightning:layoutItem flexibility="auto" padding="around-small">
+            <lightning:input name="cidade" label="Cidade: " aura:id="inputCidade" disabled="{!v.resultsControl}" value="{!v.varCidade}"/>
+        </lightning:layoutItem>            
+        <lightning:layoutItem flexibility="auto, no-grow" padding="around-small">
+            <lightning:input name="uf" label="UF: " aura:id="inputUf" disabled="{!v.resultsControl}" value="{!v.varUf}"/>
+        </lightning:layoutItem>
+    </lightning:layout>
+    <lightning:layout>
+       <lightning:layoutItem flexibility="auto, no-grow" padding="around-small">
+            <lightning:input name="ibge" label="IBGE: " aura:id="inputIbge" disabled="{!v.resultsControl}" value="{!v.varIbge}"/>
+        </lightning:layoutItem>
+        <lightning:layoutItem flexibility="auto, no-grow" padding="around-small">
+            <lightning:input name="gia" label="GIA: " aura:id="inputGia" disabled="{!v.resultsControl}" value="{!v.varGia}"/>
+        </lightning:layoutItem>
+    </lightning:layout>
+    <lightning:layout>       
+        <lightning:layoutItem padding="around-small">
+            <lightning:button variant="brand" label="Edit" title="editCep" aura:id='btnEdit' disabled="{!v.editControl}" onclick="{!c.editClick }" /> 
+        </lightning:layoutItem> 
+        <lightning:layoutItem padding="around-small">
+            <lightning:button variant="brand" label="Buscar" title="buscaCep" aura:id='btnBusca' disabled="{!v.inputCepControl}" onclick="{!c.handleClick }" />           
+        </lightning:layoutItem>
+    </lightning:layout>
+</aura:component>
