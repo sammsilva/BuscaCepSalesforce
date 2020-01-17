@@ -1,6 +1,6 @@
 <aura:component controller="GFT_CTR_BuscaCep" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId">
     <!-- variavel declarada -->
-    <ltng:require scripts="{!$Resource.jQuery}" afterScriptsLoaded="{! c.doInit}"/>
+    <ltng:require scripts="{!join(',',$Resource.jQuery,$Resource.jQueryMask)}" afterScriptsLoaded="{!c.doInit}" />
     <aura:attribute name="varCep" type="String"/>   
     <aura:attribute name="varLogradouro" type="String"/>   
     <aura:attribute name="varComplemento" type="String"/>   
@@ -13,11 +13,13 @@
     <aura:attribute name="editControl" type="boolean" />
     <aura:attribute name="inputCepControl" type="boolean"/>
     <aura:attribute name="resultsControl" type="boolean" />   
+   <!-- <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>-->
+
     <lightning:layout>
         <lightning:layoutItem padding="horizontal-medium">
-            <!-- aura id and name MUST be different-->          
-            <lightning:input name="cep" label="CEP" aura:id="inputCep" disabled="{!v.inputCepControl}" value="{!v.varCep}" placeholder="Enter Postal Code" pattern="[0-9]{5}-[0-9]{3}"/>
-        </lightning:layoutItem>
+            <!-- aura id and name MUST be different-->         
+            <lightning:input name="cep" label="CEP" class="cep" aura:id="inputCep" disabled="{!v.inputCepControl}" value="{!v.varCep}" placeholder="Enter Postal Code" maxlength="9"/>
+        </lightning:layoutItem>        
     </lightning:layout>    
     <lightning:layout>      
        <lightning:layoutItem flexibility="auto" padding="around-small">

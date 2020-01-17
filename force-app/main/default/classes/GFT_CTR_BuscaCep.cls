@@ -1,6 +1,6 @@
 public with sharing class GFT_CTR_BuscaCep {
 @AuraEnabled
-    public static Object BuscaCep(String newCep, String newAccountId){    
+    public static Object buscaCep(String newCep, String newAccountId){    
         return GFT_Cep.buscaCep(newCep, newAccountId);
     }
 @AuraEnabled

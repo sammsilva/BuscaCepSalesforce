@@ -1,4 +1,5 @@
 public with sharing class GFT_Cep {
+    
     @AuraEnabled
     public static Object buscaCep(String newCep, String newAccountId) { 
         HttpResponse data = null;      
