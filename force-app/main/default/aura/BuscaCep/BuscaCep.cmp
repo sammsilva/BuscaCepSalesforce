@@ -1,11 +1,10 @@
 <aura:component controller="GFT_CTR_BuscaCep" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId">
-    <!-- variavel declarada -->
-    <ltng:require scripts="{!join(',',$Resource.jQuery,$Resource.jQueryMask)}" afterScriptsLoaded="{!c.doInit}" />
+    <!-- variavel declarada -->   
     <aura:attribute name="varCep" type="String"/>   
     <aura:attribute name="varLogradouro" type="String"/>   
     <aura:attribute name="varComplemento" type="String"/>   
     <aura:attribute name="varBairro" type="String"/>   
-    <aura:attribute name="varCidade" type="String"/>   
+    <aura:attribute name="varCidade" type="String"/>  
     <aura:attribute name="varUf" type="String"/>   
     <aura:attribute name="varIbge" type="String"/>   
     <aura:attribute name="varGia" type="String"/>     
@@ -13,7 +12,7 @@
     <aura:attribute name="editControl" type="boolean" />
     <aura:attribute name="inputCepControl" type="boolean"/>
     <aura:attribute name="resultsControl" type="boolean" />   
-   <!-- <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>-->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
 
     <lightning:layout>
         <lightning:layoutItem padding="horizontal-medium">

@@ -1,6 +1,9 @@
 ({
     buscarCepIntegracao : function(component, event, helper) {         
-        var cep = component.find("inputCep").get("v.value");        
+        var cep = component.find("inputCep").get("v.value");     
+        
+        
+        
         var varAccountId =  component.get("v.recordId");  
         var action = component.get("c.buscaCep");
 
@@ -28,8 +31,8 @@
                    
         });
         $A.enqueueAction(action);
-    }
-,
+    },
+
     checkZipCodeOnAccount : function(component, event, helper) {     
         component.set("v.resultsControl", true);        
         var varAccountId = component.get("v.recordId");

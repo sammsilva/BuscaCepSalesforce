@@ -1,26 +1,18 @@
 ({
-    doInit : function(component,event, helper ){   
-        this.loadJquery(component,event,helper);
-        helper.checkZipCodeOnAccount(component, event, helper);
-       
+    doInit : function(component,event, helper ){  
+        helper.checkZipCodeOnAccount(component, event, helper);       
     },
 
     handleClick : function(component, event, helper) {          
-        //
+        var cep = component.find("inputCep").get("v.value");           
+        cep = cep.length==8 ? cep.substring(0,5) +'-'+cep.substring(5,8) : cep; //customMask
+        component.set("v.varCep", cep);
         helper.buscarCepIntegracao(component, event, helper);
     },  
 
-    
     editClick : function(component, event, helper) {         
         helper.clearFields(component, event, helper); 
-    },
-
-    loadJquery : function(component, event, helper) {
-         console.log('loadJquery.');
-        jQuery(document).ready(function(){
-            $(".cep").mask("99999-999");
-        });
-    }   
+    } 
 })
 
 
